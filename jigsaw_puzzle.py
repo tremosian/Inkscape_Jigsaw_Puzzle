@@ -23,15 +23,15 @@ class Intersection:
 class JigsawPuzzle(inkex.Effect):
     def __init__(self):
         inkex.Effect.__init__(self)
-        self.OptionParser.add_option("--random_seed", action="store", type="int", dest="random_seed", default=0, help="Seed for randomness") 
-        self.OptionParser.add_option("--puzzle_width", action="store", type="int", dest="puzzle_width", default=300, help="Width of the puzzle")
-        self.OptionParser.add_option("--puzzle_height", action="store", type="int", dest="puzzle_height", default=200, help="Height of the puzzle")
-        self.OptionParser.add_option("--tiles_width", action="store", type="int", dest="tiles_width", default=15, help="Number of tiles across")
-        self.OptionParser.add_option("--tiles_height", action="store", type="int", dest="tiles_height", default=10, help="Number of tiles high")
-        self.OptionParser.add_option("--tab_size", action="store", type="float", dest="tab_size", default=15.0, help="Size of the tabs in %")
-        self.OptionParser.add_option("--jitter", action="store", type="float", dest="jitter", default=4.0, help="Random factor (jitter)")
-        self.OptionParser.add_option("--jitter_join", action="store", type="int", dest="jitter_intersection", default=0, help="Randomness of intersections")
-        self.OptionParser.add_option("--debug", action="store", type="inkbool", dest="debugMode", default=False, help="Debug Mode")
+        self.arg_parser.add_argument("--random_seed", action="store", type="int", dest="random_seed", default=0, help="Seed for randomness") 
+        self.arg_parser.add_argument("--puzzle_width", action="store", type="int", dest="puzzle_width", default=300, help="Width of the puzzle")
+        self.arg_parser.add_argument("--puzzle_height", action="store", type="int", dest="puzzle_height", default=200, help="Height of the puzzle")
+        self.arg_parser.add_argument("--tiles_width", action="store", type="int", dest="tiles_width", default=15, help="Number of tiles across")
+        self.arg_parser.add_argument("--tiles_height", action="store", type="int", dest="tiles_height", default=10, help="Number of tiles high")
+        self.arg_parser.add_argument("--tab_size", action="store", type="float", dest="tab_size", default=15.0, help="Size of the tabs in %")
+        self.arg_parser.add_argument("--jitter", action="store", type="float", dest="jitter", default=4.0, help="Random factor (jitter)")
+        self.arg_parser.add_argument("--jitter_join", action="store", type="int", dest="jitter_intersection", default=0, help="Randomness of intersections")
+        self.arg_parser.add_argument("--debug", action="store", type="inkbool", dest="debugMode", default=False, help="Debug Mode")
 
     def effect(self):
 
